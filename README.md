@@ -10,3 +10,5 @@ https://sfxr.me/
 https://support.unity.com/hc/en-us/articles/206116386-How-do-I-play-multiple-Audio-Sources-from-one-GameObject-
 
 Youtube link: https://www.youtube.com/watch?v=IAU2OlW1x1g&ab_channel=Halinaqi2
+
+Chose the sound option
