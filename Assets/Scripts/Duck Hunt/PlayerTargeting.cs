@@ -7,12 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class PlayerTargeting : MonoBehaviour
 {
+    //DLL
+    //DLL imports
+    [DllImport("SimplePlugin")]
+    private static extern bool normalShot();
+
+    [DllImport("SimplePlugin")]
+    private static extern bool silentShot();
+
+
     //go to main menu variable
     private int amountOfDucksKilled;
     public int amountOfDucksToWin;
 
+    private bool playSilentShot;
+    private bool playNormalShot;
+
     private Vector3 mousePosition;
     public float moveSpeed = 0.1f;
+
+    
 
     //get audio component
     AudioSource audioData; //plays the clip in the component
@@ -25,6 +39,12 @@ public class PlayerTargeting : MonoBehaviour
 
         //Get sound stuff
         audioData = GetComponent<AudioSource>();
+
+        
+
+        //Set internal variables with DLL
+        playNormalShot = normalShot();
+        playSilentShot = silentShot();
 
     }
 
@@ -52,7 +72,25 @@ public class PlayerTargeting : MonoBehaviour
         {
             Destroy(col.gameObject);//destroy this game object
             //Play Sound of duck death
-            audioData.Play(0);
+
+            if (playNormalShot == true)
+            {
+                //play default sound
+                //AudioClip.PlayOneShot(firstAudioClip, 0.6F);
+
+            }
+            if (playSilentShot == true)
+            {
+                //play silent shot sound
+                //AudioClip.PlayOneShot(secondAudioClip, 0.6F);
+
+            }
+            else
+            {
+                //Play jump Sound
+                audioData.Play(0);
+            }
+            
             //increase duck kills
             amountOfDucksKilled = amountOfDucksKilled + 1;
 
