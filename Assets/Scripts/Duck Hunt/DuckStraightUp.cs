@@ -15,7 +15,7 @@ public class DuckStraightUp : MonoBehaviour
     private Transform target;
 
     //Speed
-    private float movespeed;
+    public float movespeed;
 
     //flapping strength
     private float jumpForce;
@@ -25,7 +25,7 @@ public class DuckStraightUp : MonoBehaviour
     void Start()
     {
         //set speed
-        movespeed = 5f;
+       // movespeed = 5f;
 
         //get rigidbody
         rb = GetComponent<Rigidbody2D>();
@@ -41,22 +41,5 @@ public class DuckStraightUp : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, target.position, movespeed * Time.deltaTime);
     }
 
-    //if it collides with anything it dies.
-    public void OnCollisionEnter2D(Collision2D col)
-    {
-        // When collided with player shot
-        if (col.gameObject.tag == "PlayerTarget")
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Destroy(col.gameObject);//destroy this game object
-            }
-        }
-
-
-
-
-
-
-    }
+    
 }

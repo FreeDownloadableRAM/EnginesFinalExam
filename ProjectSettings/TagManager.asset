@@ -11,6 +11,7 @@ TagManager:
   - WallRight
   - WallLeft
   - DuckTarget
+  - PlayerTarget
   layers:
   - Default
   - TransparentFX
