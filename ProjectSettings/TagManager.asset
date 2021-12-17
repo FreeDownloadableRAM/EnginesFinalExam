@@ -6,6 +6,11 @@ TagManager:
   tags:
   - DoorPortal
   - Enemy
+  - WallTop
+  - WallBottom
+  - WallRight
+  - WallLeft
+  - DuckTarget
   layers:
   - Default
   - TransparentFX
@@ -48,4 +53,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 420841127
+    locked: 0
+  - name: Tiles
+    uniqueID: 3970702749
     locked: 0
